@@ -12,7 +12,7 @@
                 <a
                     class="btn btn-primary btn-lg btn-ripple"
                     id="blogLink"
-                    href="https://neoteak.cn"
+                    href="https://blog.neoteak.cn"
                 >
                     <i class="fas fa-blog"></i> 博客页面
                 </a>
