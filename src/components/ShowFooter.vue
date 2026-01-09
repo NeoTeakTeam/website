@@ -32,14 +32,14 @@
                     <a
                         href="https://github.com/NeoTeakTeam"
                         class="social-icon tooltip"
-                        style="cursor: default !important"
+                        style="cursor: pointer !important"
                         ><i class="fab fa-github"></i
                         ><span class="tooltip-text">NeoTeak Team</span></a
                     >
                     <a
                         href="https://github.com/AImixAE"
                         class="social-icon tooltip"
-                        style="cursor: default !important"
+                        style="cursor: pointer !important"
                         ><i class="fab fa-github"></i
                         ><span class="tooltip-text">AImixAE</span></a
                     >

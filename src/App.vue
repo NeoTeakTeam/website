@@ -40,8 +40,14 @@
         <i class="fas fa-info-circle"></i>
         <strong>提示！</strong>
         <div class="fade-in d-inline">
-            博客界面已经迁移至<a href="https://blog.neoteak.cn">这里</a>,
-            现在你看到的是新的主页! 该提示将于 <b>2月份</b> 左右被移除
+            博客界面已经迁移至<b
+                ><a
+                    class="tooltip"
+                    href="https://blog.neoteak.cn"
+                    style="cursor: pointer !important"
+                    >这里 <span class="tooltip-text">blog.neoteak.cn</span></a
+                ></b
+            >, 现在你看到的是新的主页! 该提示将于 <b>2月份</b> 左右被移除
         </div>
     </div>
     <RouterView />
