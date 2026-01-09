@@ -1,0 +1,72 @@
+name: Deploy Vue 3 Project to GitHub Pages
+
+on:
+  # 每次向 main 分支 push 时触发
+  push:
+    branches:
+      - main
+  # 允许在 Actions 标签页手动触发
+  workflow_dispatch:
+
+# 设置 GITHUB_TOKEN 的权限，允许部署到 GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 防止并发部署导致的问题
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 安装 pnpm
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+
+      # 安装 Node.js (使用最新 LTS 版本)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+          cache: 'pnpm'
+
+      # 安装依赖
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # 构建项目
+      - name: Build project
+        run: pnpm run build
+        env:
+          # 如果你的项目需要知道基础路径，可以设置此变量
+          # 通常设置为仓库名，例如 /my-repo-name/
+          # 如果是自定义域名或根路径，可以设为 /
+          BASE_URL: /
+
+      # 上传构建产物，供下一个 Job 使用
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # 这里的路径需要根据你的项目配置，通常是 dist 或 .vitepress/dist
+          path: './dist'
+
+  # 部署 Job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
