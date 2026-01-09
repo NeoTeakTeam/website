@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { updateContent } from "@/assets/script/UpdateContent";
+</script>
 
 <template>
     <!-- 主页标题 -->
@@ -23,6 +25,13 @@
                 >
                     <i class="fab fa-github"></i> GitHub
                 </a>
+                <btn
+                    class="btn btn-outline btn-lg btn-ripple"
+                    id="githubLink"
+                    @click="updateContent()"
+                >
+                    <i class="fa-solid fa-arrows-rotate"></i> 更新内容
+                </btn>
             </div>
         </div>
     </header>
