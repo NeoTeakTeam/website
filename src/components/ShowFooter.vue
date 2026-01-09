@@ -29,12 +29,20 @@
                     <a href="https://github.com/AImixAE">AImixAE</a>.
                 </p>
                 <div class="footer-social">
-                    <a href="https://github.com/NeoTeakTeam" class="social-icon"
+                    <a
+                        href="https://github.com/NeoTeakTeam"
+                        class="social-icon tooltip"
+                        style="cursor: default !important"
                         ><i class="fab fa-github"></i
-                    ></a>
-                    <a href="https://github.com/AImixAE" class="social-icon"
+                        ><span class="tooltip-text">NeoTeak Team</span></a
+                    >
+                    <a
+                        href="https://github.com/AImixAE"
+                        class="social-icon tooltip"
+                        style="cursor: default !important"
                         ><i class="fab fa-github"></i
-                    ></a>
+                        ><span class="tooltip-text">AImixAE</span></a
+                    >
                 </div>
             </div>
         </div>
