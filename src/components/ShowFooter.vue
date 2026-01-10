@@ -43,6 +43,13 @@
                         ><i class="fab fa-github"></i
                         ><span class="tooltip-text">AImixAE</span></a
                     >
+                    <a
+                        href="javascript:location.href = 'mailto:' + ['NeoTeak','outlook.com'].join('@')"
+                        class="social-icon tooltip"
+                        style="cursor: pointer !important"
+                        ><i class="fa-solid fa-message"></i
+                        ><span class="tooltip-text">NeoTeak Email</span></a
+                    >
                 </div>
             </div>
         </div>
