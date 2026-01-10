@@ -15,6 +15,7 @@
                     <h5>链接</h5>
                     <ul class="footer-links">
                         <li><RouterLink to="/">主页</RouterLink></li>
+                        <li><RouterLink to="/daily">Daily</RouterLink></li>
                         <li><a href="https://blog.neoteak.cn">Blog</a></li>
                         <li>
                             <a href="https://github.com/NeoTeakTeam">GitHub</a>
