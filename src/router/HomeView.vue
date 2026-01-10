@@ -1,10 +1,26 @@
 <script setup lang="ts">
 import HeroSection from "@/components/HeroSection.vue";
 import ShowFooter from "@/components/ShowFooter.vue";
+import ShowPosts from "@/components/ShowPosts.vue";
 </script>
 
 <template>
-    <HeroSection id="home" />
+    <div class="alert alert-primary">
+        <i class="fas fa-info-circle"></i>
+        <strong>提示！</strong>
+        <div class="fade-in d-inline">
+            博客界面已经迁移至<b
+                ><a
+                    class="tooltip"
+                    href="https://blog.neoteak.cn"
+                    style="cursor: pointer !important"
+                    >这里 <span class="tooltip-text">blog.neoteak.cn</span></a
+                ></b
+            >, 现在你看到的是新的主页! 该提示将于 <b>2月份</b> 左右被移除
+        </div>
+    </div>
+
+    <HeroSection />
 
     <main class="container">
         <section id="information" class="section">
@@ -56,6 +72,15 @@ import ShowFooter from "@/components/ShowFooter.vue";
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="information" class="section">
+            <h2 class="section-title title">📔 Daily</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <ShowPosts />
                 </div>
             </div>
         </section>

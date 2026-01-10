@@ -31,8 +31,16 @@ const toggleMenu = () => {
             </button>
             <ul class="navbar-nav" :class="{ show: isMenuOpen }" id="navbarNav">
                 <li class="nav-item">
-                    <RouterLink to="/" class="nav-link active"
+                    <RouterLink to="/" class="nav-link" active-class="active"
                         ><i class="fas fa-home" /> 主页</RouterLink
+                    >
+                </li>
+                <li class="nav-item">
+                    <RouterLink
+                        to="/daily"
+                        class="nav-link"
+                        active-class="active"
+                        >Daily</RouterLink
                     >
                 </li>
                 <li class="nav-item">
@@ -49,20 +57,6 @@ const toggleMenu = () => {
         </div>
     </nav>
 
-    <div class="alert alert-primary">
-        <i class="fas fa-info-circle"></i>
-        <strong>提示！</strong>
-        <div class="fade-in d-inline">
-            博客界面已经迁移至<b
-                ><a
-                    class="tooltip"
-                    href="https://blog.neoteak.cn"
-                    style="cursor: pointer !important"
-                    >这里 <span class="tooltip-text">blog.neoteak.cn</span></a
-                ></b
-            >, 现在你看到的是新的主页! 该提示将于 <b>2月份</b> 左右被移除
-        </div>
-    </div>
     <RouterView />
 </template>
 

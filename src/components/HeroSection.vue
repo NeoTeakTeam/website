@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { updateContent } from "@/assets/script/UpdateContent";
+import { updateContent } from "@/assets/script/updateContent";
 </script>
 
 <template>
@@ -25,13 +25,13 @@ import { updateContent } from "@/assets/script/UpdateContent";
                 >
                     <i class="fab fa-github"></i> GitHub
                 </a>
-                <btn
+                <button
                     class="btn btn-outline btn-lg btn-ripple"
                     id="githubLink"
                     @click="updateContent()"
                 >
                     <i class="fa-solid fa-arrows-rotate"></i> 更新内容
-                </btn>
+            </button>
             </div>
         </div>
     </header>
