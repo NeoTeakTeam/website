@@ -1,4 +1,13 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from "vue";
+
+const isMenuOpen = ref(false);
+
+// 切换菜单显示/隐藏的方法
+const toggleMenu = () => {
+    isMenuOpen.value = !isMenuOpen.value;
+};
+</script>
 
 <template>
     <!-- 导航栏 -->
@@ -13,10 +22,14 @@
                 />
                 &nbsp; NeoTeak Team
             </div>
-            <button class="navbar-toggler" id="navbarToggler">
+            <button
+                class="navbar-toggler"
+                id="navbarToggler"
+                @click="toggleMenu"
+            >
                 <i class="fas fa-bars"></i>
             </button>
-            <ul class="navbar-nav" id="navbarNav">
+            <ul class="navbar-nav" :class="{ show: isMenuOpen }" id="navbarNav">
                 <li class="nav-item">
                     <RouterLink to="/" class="nav-link active"
                         ><i class="fas fa-home" /> 主页</RouterLink

@@ -80,6 +80,24 @@ html {
     }
 }
 
+/* 滚动条整体样式 */
+::-webkit-scrollbar {
+    width: 12px; /* 滚动条宽度 */
+}
+
+/* 滚动条滑块样式 */
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary); /* 滑块颜色 */
+    border-radius: 6px; /* 圆角 */
+    border: 2px solid var(--secondary-bg);
+}
+
+/* 滚动条轨道样式 */
+::-webkit-scrollbar-track {
+    background-color: var(--secondary-bg); /* 轨道颜色 */
+    border-radius: 6px;
+}
+
 body {
     font-family: var(--font-main);
     background-color: var(--primary-bg);
@@ -1694,6 +1712,121 @@ textarea.form-control {
     }
 }
 
+/* 范围选择器 (range input) 样式 */
+.form-control-range {
+    -webkit-appearance: none; /* 移除默认样式 */
+    appearance: none; /* 移除默认样式 */
+    /* width: 100%; */
+    height: 20px; /* 轨道高度 */
+    background: var(--tertiary-bg); /* 轨道背景色 */
+    border-radius: 50px; /* 轨道圆角 */
+    outline: none;
+    margin: var(--spacing-sm) 0;
+    cursor: pointer;
+    transition: background var(--transition-speed) ease;
+
+    /* Webkit (Chrome, Safari, Edge) 滑块按钮样式 */
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 18px; /* 按钮宽度 */
+        height: 18px; /* 按钮高度 */
+        border-radius: 50%; /* 圆形按钮 */
+        background: var(--text-color); /* 按钮颜色 */
+        cursor: pointer;
+        box-shadow: var(--shadow-sm); /* 按钮阴影 */
+        transition: all var(--transition-speed) ease;
+        margin-top: 2px; /* 垂直居中 */
+    }
+
+    /* Firefox 滑块按钮样式 */
+    &::-moz-range-thumb {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: var(--text-color);
+        cursor: pointer;
+        border: none;
+        box-shadow: var(--shadow-sm);
+        transition: all var(--transition-speed) ease;
+    }
+
+    /* Webkit (Chrome, Safari, Edge) 轨道样式 */
+    &::-webkit-slider-runnable-track {
+        height: 22px;
+        cursor: pointer;
+        background: var(--tertiary-bg);
+        border-radius: 50px;
+        /* border: 1px solid; */
+    }
+
+    /* Firefox 轨道样式 */
+    &::-moz-range-track {
+        height: 22px;
+        cursor: pointer;
+        background: var(--tertiary-bg);
+        border-radius: 50px;
+        border: none;
+    }
+
+    /* 悬停状态 */
+    &:hover {
+        background: var(--border-color); /* 轨道背景色变化 */
+
+        &::-webkit-slider-thumb {
+            transform: scale(1.1); /* 按钮放大 */
+            box-shadow: var(--shadow-md); /* 增加阴影 */
+        }
+
+        &::-moz-range-thumb {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-md);
+        }
+    }
+
+    /* 激活/拖动状态 */
+    &:active {
+        &::-webkit-slider-thumb {
+            background: var(--primary-dark); /* 按钮颜色加深 */
+            transform: scale(1.15); /* 按钮进一步放大 */
+            box-shadow: var(--shadow-lg); /* 增加阴影 */
+        }
+
+        &::-moz-range-thumb {
+            background: var(--primary-dark);
+            transform: scale(1.15);
+            box-shadow: var(--shadow-lg);
+        }
+    }
+
+    /* 聚焦状态 */
+    &:focus {
+        &::-webkit-slider-thumb {
+            box-shadow: 0 0 0 3px rgba(106, 158, 255, 0.25); /* 聚焦光环 */
+        }
+
+        &::-moz-range-thumb {
+            box-shadow: 0 0 0 3px rgba(106, 158, 255, 0.25);
+        }
+    }
+
+    /* 禁用状态 */
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+
+        &::-webkit-slider-thumb {
+            background: var(--secondary);
+            box-shadow: none;
+        }
+
+        &::-moz-range-thumb {
+            background: var(--secondary);
+            box-shadow: none;
+        }
+    }
+}
+
 /* 自定义开关 */
 .custom-switch {
     display: flex;
@@ -2513,6 +2646,7 @@ dl {
 
     footer.footer.end {
         padding-left: 10px;
+        padding-right: 10px;
     }
 
     /* 调整卡片内间距 */
@@ -2617,4 +2751,53 @@ dl {
         position: relative;
         overflow: visible;
     }
+}
+
+@media (max-width: 768px) {
+    /* 重置容器内边距 */
+    .container {
+        padding-right: 0;
+        padding-left: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* 重置行的负外边距 */
+    .row {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    /* 重置列的内边距 */
+    [class*="col-"] {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    /* 确保卡片等子元素不溢出 */
+    .card,
+    .btn {
+        width: 100%;
+    }
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* 确保所有元素都遵循 border-box 模型 */
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html .alert {
+    margin-left: 5px;
+    margin-right: 5px;
 }
