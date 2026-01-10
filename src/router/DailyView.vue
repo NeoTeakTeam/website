@@ -10,11 +10,7 @@ import ShowPosts from "@/components/ShowPosts.vue";
     <main class="container">
         <section id="information" class="section">
             <h2 class="section-title title">📔 Daily</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <ShowPosts />
-                </div>
-            </div>
+            <ShowPosts />
         </section>
     </main>
 
