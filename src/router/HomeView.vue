@@ -63,7 +63,7 @@ const toggleHeaderTip = () => {
 
                             <div class="progress mt-1">
                                 <div class="progress-bar" style="width: 75%">
-                                    80%
+                                    85%
                                 </div>
                             </div>
                         </div>
