@@ -62,10 +62,24 @@ const toggleHeaderTip = () => {
                             <RenderPost name="About-Tiny-tips" />
 
                             <div class="progress mt-1">
-                                <div class="progress-bar" style="width: 75%">
+                                <div class="progress-bar" style="width: 85%">
                                     85%
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            联系我们
+                        </div>
+                        <div class="card-body">
+                            <RenderPost name="About-Contact-me" />
                         </div>
                     </div>
                 </div>
