@@ -1,13 +1,21 @@
 <script setup lang="ts">
+import { ref } from "vue";
+
 import HeroSection from "@/components/HeroSection.vue";
 import ShowFooter from "@/components/ShowFooter.vue";
+import RenderPost from "@/components/RenderPost.vue";
+
+const showHeaderTip = ref(true);
+const toggleHeaderTip = () => {
+    showHeaderTip.value = !showHeaderTip.value;
+};
 </script>
 
 <template>
-    <div class="alert alert-primary">
+    <p class="alert alert-primary" v-if="showHeaderTip">
         <i class="fas fa-info-circle"></i>
         <strong>提示！</strong>
-        <div class="fade-in d-inline">
+        <span class="fade-in">
             博客界面已经迁移至<b
                 ><a
                     class="tooltip"
@@ -16,10 +24,16 @@ import ShowFooter from "@/components/ShowFooter.vue";
                     >这里 <span class="tooltip-text">blog.neoteak.cn</span></a
                 ></b
             >, 现在你看到的是新的主页! 该提示将于 <b>2月份</b> 左右被移除
-        </div>
-    </div>
+            <button
+                @click="toggleHeaderTip"
+                class="btn btn-sm btn-outline ml-1"
+            >
+                隐藏 <i>(临时)</i>
+            </button>
+        </span>
+    </p>
 
-    <HeroSection />
+    <HeroSection title="NeoTeak Team" subtitle="Make everything be easy." />
 
     <main class="container">
         <section id="information" class="section">
@@ -34,16 +48,7 @@ import ShowFooter from "@/components/ShowFooter.vue";
                             负责内容
                         </div>
                         <div class="card-body">
-                            我们是一个小团体, 研究一些奇奇怪怪<i>(?)</i>的内容.
-                            <br />
-                            该团队的主要维护者是
-                            <a href="https://github.com/AImixAE"
-                                ><b>AImixAE Nya Mocha</b></a
-                            >
-                            <br />
-                            我们喜欢接触新鲜的内容, 喜欢开发异想天开的项目.
-                            <br />
-                            <i>(不过目前什么都没有呢...)</i>
+                            <RenderPost name="About-Responsible-for-content" />
                         </div>
                     </div>
                 </div>
@@ -54,19 +59,11 @@ import ShowFooter from "@/components/ShowFooter.vue";
                             <i class="fa fa-circle-info"></i> 小小提示
                         </div>
                         <div class="card-body">
-                            该项目使用的是还未公布的
-                            <b>Neon Dark UI Ultra V4</b> <i>(自己编写)</i>,
-                            <br />
-                            我们将会在一段时间后公布于众.
-                            <br />
-                            目前还在编写文档和优化.
-                            <br />
-                            希望喜欢这个页面样式的人不会错过!
-                            <br />
-                            <i>(不过请不要提前擅自使用喵...)</i>
-                            <div class="progress">
+                            <RenderPost name="About-Tiny-tips" />
+
+                            <div class="progress mt-1">
                                 <div class="progress-bar" style="width: 75%">
-                                    75%
+                                    80%
                                 </div>
                             </div>
                         </div>

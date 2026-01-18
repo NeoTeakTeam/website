@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { daily } from "@/assets/script/daily";
+import { posts } from "@/assets/script/posts";
 import RenderPost from "./RenderPost.vue";
 
-const reversedDaily = daily.slice().reverse();
+const reversedPosts = posts.slice().reverse();
 </script>
 
 <template>
     <div class="row">
-        <div class="col-md-6" v-for="post in reversedDaily" :key="post.id">
+        <div class="col-md-6" v-for="post in reversedPosts" :key="post.id">
             <div class="card">
                 <div class="card-header">
                     <i class="fa-solid fa-magnifying-glass"></i>

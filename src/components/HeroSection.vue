@@ -1,14 +1,21 @@
 <script setup lang="ts">
 import { updateContent } from "@/assets/script/updateContent";
+
+const props = defineProps({
+    title: String,
+    subtitle: String,
+});
 </script>
 
 <template>
     <!-- 主页标题 -->
     <header id="home" class="hero-section">
         <div class="container">
-            <h1 class="hero-title fade-in">NeoTeak Team</h1>
+            <h1 class="hero-title fade-in">{{ props.title }}</h1>
             <p class="hero-subtitle fade-in">
-                <i><b>Make everything be easy.</b></i>
+                <i
+                    ><b>{{ props.subtitle }}</b></i
+                >
             </p>
             <div class="hero-actions fade-in">
                 <a
@@ -31,7 +38,7 @@ import { updateContent } from "@/assets/script/updateContent";
                     @click="updateContent()"
                 >
                     <i class="fa-solid fa-arrows-rotate"></i> 更新内容
-            </button>
+                </button>
             </div>
         </div>
     </header>

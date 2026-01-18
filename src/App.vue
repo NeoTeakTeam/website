@@ -44,7 +44,7 @@ const toggleMenu = () => {
                     >
                 </li>
                 <li class="nav-item">
-                    <a href="https://neoteak.cn" class="nav-link"
+                    <a href="https://blog.neoteak.cn" class="nav-link"
                         ><i class="fas fa-blog" /> Blog</a
                     >
                 </li>

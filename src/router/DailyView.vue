@@ -5,7 +5,7 @@ import ShowPosts from "@/components/ShowPosts.vue";
 </script>
 
 <template>
-    <HeroSection />
+    <HeroSection title="Daily" subtitle="About my everything you can know." />
 
     <main class="container">
         <section id="information" class="section">
