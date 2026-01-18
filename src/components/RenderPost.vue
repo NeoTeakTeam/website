@@ -9,7 +9,7 @@ const props = defineProps({
     basepath: { type: String, required: false },
 });
 
-const basepath = props.basepath ? props.basepath : "/posts";
+const basepath = props.basepath || "/posts";
 
 const markdownRenderer = createMarkdownRenderer();
 const source = ref(basepath + "/" + props.name + ".md");
@@ -42,7 +42,7 @@ const checkFileModification = async () => {
     try {
         const response = await fetch(source.value, { method: "HEAD" });
         const modified = response.headers.get("last-modified");
-        
+
         if (modified) {
             const modifiedTime = new Date(modified).getTime();
             if (lastModified.value && modifiedTime > lastModified.value) {
